@@ -22,7 +22,8 @@ class _home_screenState extends State<home_screen> {
       child: Scaffold(
         backgroundColor: Colors.blueGrey.shade400,
         appBar: AppBar(
-          title: Text("Staggered RecyclerView"),
+          title: Text("Staggered RecyclerView",style: TextStyle(color: Colors.white)),
+          backgroundColor: Colors.lightBlue,
         ),
         body: GridView.custom(gridDelegate: SliverWovenGridDelegate.count(
           crossAxisCount: 2,
@@ -48,6 +49,10 @@ class _home_screenState extends State<home_screen> {
   Widget theme({required int index}) {
     return Container(
       margin: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.white,width: 4),
+        borderRadius: BorderRadius.circular(10)
+      ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
           child: Image.asset("${hf!.images[index]}",fit: BoxFit.fill)),
